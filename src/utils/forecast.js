@@ -2,7 +2,7 @@ const request = require('postman-request')
 
 
 const forecast = (latitude, longitude, callback) => {
-    const url = 'http://api.weatherstack.com/current?access_key=fbd47e73069bd0d18a6baba2ef684e21&query=' + latitude + ',' + longitude +'&units=f';
+    const url = 'http://api.weatherstack.com/current?access_key=<weatherstack API Key>' + latitude + ',' + longitude +'&units=f';
     request({url: url, json: true }, (error, response) => {
 
         if (error) {
@@ -15,9 +15,16 @@ const forecast = (latitude, longitude, callback) => {
         if (!current) {
             callback("Unable to access the weather service. Try again later", undefined);
         }
+        var descriptions = current.weather_descriptions;
         callback(undefined, {
             temperature: current.temperature,
-            feelslike: current.feelslike, 
+            feelslike: current.feelslike,
+            description: descriptions[0],
+            windSpeed: descriptions.wind_speed,
+            windDirection: descriptions.wind_dir,
+            precipitation: descriptions.precip,
+            humidity: descriptions.humidity,
+            precipitation: descriptions.precip,
             });
         }
     });
