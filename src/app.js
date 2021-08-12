@@ -9,7 +9,7 @@ const fs       = require('fs');
 
 const app = express();
 
-const keyFile = process.env.process.env.PATH_TO_SSL_CERTIFICATE_PRIVATE_KEY_FILE;
+const keyFile = process.env.PATH_TO_SSL_CERTIFICATE_PRIVATE_KEY_FILE;
 const fullchain = process.env.PATH_TO_SSL_CERTIFICATE_FILE;
 
 const options = {
