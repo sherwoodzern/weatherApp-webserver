@@ -9,9 +9,15 @@ const fs       = require('fs');
 
 const app = express();
 
+const keyFile = process.env.process.env.PATH_TO_SSL_CERTIFICATE_PRIVATE_KEY_FILE;
+const fullchain = process.env.PATH_TO_SSL_CERTIFICATE_FILE;
+
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/ic6.gmelo.us/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/ic6.gmelo.us/fullchain.pem')
+    
+    key: fs.readFileSync(keyFile),
+    cert: fs.readFileSync(fullchain)
+    //key: fs.readFileSync('/etc/letsencrypt/live/ic6.gmelo.us/privkey.pem'),
+    //cert: fs.readFileSync('/etc/letsencrypt/live/ic6.gmelo.us/fullchain.pem')
  };
 
 // Define paths for Express config
