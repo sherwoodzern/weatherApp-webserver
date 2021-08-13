@@ -36,7 +36,7 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Sherwood Zern'
+        name: 'Your Name'
     })
 })
 
@@ -44,7 +44,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
         message: 'Help is only a click away',
-        name: 'Sherwood Zern'
+        name: 'Your Name'
     })
 
 })
@@ -52,7 +52,7 @@ app.get('/help', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Sherwood Zern'
+        name: 'Your Name'
     })
 })
 
@@ -88,7 +88,7 @@ app.get('/help/*', (req, res) => {
         title: 'Error Page',
         status: 404,
         message: 'Help page not found',
-        name: 'Sherwood Zern'
+        name: 'Your Name'
     })
 })
 
@@ -97,7 +97,7 @@ app.get('*', (req, res) => {
         title: 'Error Page',
         status: 404,
         message: 'Requested Page Not Found',
-        name: 'Sherwood Zern'
+        name: 'Your Name'
     })
 })
 
