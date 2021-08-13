@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit', (event) => {
     const location = search.value
     place.textContent = 'Loading..........'
     
-    fetch('https://129.146.65.194/weather?address='+ location)
+    fetch('/weather?address='+ location)
         .then(handleResponse)
         .then((data) => {
             if (data.error) {
