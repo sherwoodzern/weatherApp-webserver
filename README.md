@@ -5,8 +5,9 @@ The application consists of 3 pages: Home, About, and Help. All of the interesti
 
 # Code Requirements
 In order to execute the code you need to register with two external vendors:
-- weatherstack.com
-- www.mapbox.com
+- WeatherStack [API Key] https:weatherstack.com
+- Mapbox [API Key] https://www.mapbox.com
+- OCI "role:webserver" freeform tag needs to be added in the target compute instance
 - Each of these vendors will provide you with an API Key. These API Keys need to be plugged into the code.
     - In the geocode.js file (src/utils) add your mapbox.com API Key in the location <mapbox API Key Here>
     - In the forecast.js file (src/utils) add your weatherstack.com API Key in the location <weatherstack API Key Here>
